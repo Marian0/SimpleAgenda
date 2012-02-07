@@ -1,0 +1,21 @@
+
+{% extends 'SimpleAgendaBundle:Layout:base.html.twig' %}
+{% block title %}Editando un Circulo{% endblock %}
+{% block content %}
+<h1>Circle creation</h1>
+
+<form action="{{ path('circle_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit">Crear</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('circle') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

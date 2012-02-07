@@ -1,0 +1,60 @@
+{% extends 'SimpleAgendaBundle:Layout:base.html.twig' %}
+{% block title %}CRUD Contacto{% endblock %}
+{% block content %}
+
+
+
+<h1>Contact</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ entity.title }}</td>
+        </tr>
+        <tr>
+            <th>Facebook_user</th>
+            <td>{{ entity.facebookuser }}</td>
+        </tr>
+        <tr>
+            <th>Cod_area</th>
+            <td>{{ entity.codarea }}</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>{{ entity.phone }}</td>
+        </tr>
+        <tr>
+            <th>Msg_count</th>
+            <td>{{ entity.msgcount }}</td>
+        </tr>
+        <tr>
+            <th>Company_id</th>
+            <td>{{ entity.companyid }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('contact') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('contact_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('contact_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

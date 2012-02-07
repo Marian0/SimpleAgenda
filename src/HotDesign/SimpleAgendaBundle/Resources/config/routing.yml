@@ -1,0 +1,12 @@
+SimpleAgendaBundle_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: SimpleAgendaBundle:Default:index }
+    
+
+circulos:
+    resource: "@SimpleAgendaBundle/Resources/config/routing/circle.yml"
+    prefix: circle
+    
+contactos:
+    resource: "@SimpleAgendaBundle/Resources/config/routing/contact.yml"
+    prefix: contact

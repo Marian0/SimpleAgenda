@@ -1,0 +1,30 @@
+circle:
+    pattern:  /
+    defaults: { _controller: "SimpleAgendaBundle:Circle:index" }
+
+circle_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SimpleAgendaBundle:Circle:show" }
+
+circle_new:
+    pattern:  /new
+    defaults: { _controller: "SimpleAgendaBundle:Circle:new" }
+
+circle_create:
+    pattern:  /create
+    defaults: { _controller: "SimpleAgendaBundle:Circle:create" }
+    requirements: { _method: post }
+
+circle_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SimpleAgendaBundle:Circle:edit" }
+
+circle_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SimpleAgendaBundle:Circle:update" }
+    requirements: { _method: post }
+
+circle_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SimpleAgendaBundle:Circle:delete" }
+    requirements: { _method: post }

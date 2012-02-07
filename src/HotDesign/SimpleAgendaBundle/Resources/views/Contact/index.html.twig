@@ -1,0 +1,53 @@
+{% extends 'SimpleAgendaBundle:Layout:base.html.twig' %}
+{% block title %}CRUD Contacto{% endblock %}
+{% block content %}
+
+
+<h1>Contact list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Facebook_user</th>
+            <th>Cod_area</th>
+            <th>Phone</th>
+            <th>Msg_count</th>
+            <th>Company_id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('contact_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.title }}</td>
+            <td>{{ entity.facebookuser }}</td>
+            <td>{{ entity.codarea }}</td>
+            <td>{{ entity.phone }}</td>
+            <td>{{ entity.msgcount }}</td>
+            <td>{{ entity.getcompanyname }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('contact_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('contact_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('contact_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>
+{% endblock %}

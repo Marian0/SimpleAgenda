@@ -1,0 +1,9 @@
+<ul>
+ {% for contact in contacts %}
+
+        <li><a href="{{ path('contact_show', { 'id': contact.id }) }}">{{ contact.title }}</a></li>
+
+{% else %}
+        <li>No hay contactos</li>
+{% endfor %}
+</ul>    

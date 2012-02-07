@@ -1,0 +1,30 @@
+contact:
+    pattern:  /
+    defaults: { _controller: "SimpleAgendaBundle:Contact:index" }
+
+contact_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "SimpleAgendaBundle:Contact:show" }
+
+contact_new:
+    pattern:  /new
+    defaults: { _controller: "SimpleAgendaBundle:Contact:new" }
+
+contact_create:
+    pattern:  /create
+    defaults: { _controller: "SimpleAgendaBundle:Contact:create" }
+    requirements: { _method: post }
+
+contact_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "SimpleAgendaBundle:Contact:edit" }
+
+contact_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "SimpleAgendaBundle:Contact:update" }
+    requirements: { _method: post }
+
+contact_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "SimpleAgendaBundle:Contact:delete" }
+    requirements: { _method: post }
