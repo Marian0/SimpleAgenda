@@ -44,9 +44,9 @@
                         <a class="brand" href="#">Project name</a>
                         <div class="nav-collapse">
                             <ul class="nav">
-                                <li class="active"><a href="#">Agenda</a></li>
-                                <li><a href="{{ path('contact') }}">Contactos</a></li>
-                                <li><a href="{{ path('circle') }}">Círculos</a></li>
+                                <li {% if app.request.attributes.get('_route') == 'agenda' %}class="active"{% endif %}><a href="#">Agenda</a></li>
+                                <li {% if app.request.attributes.get('_route') == 'contact' %}class="active"{% endif %}><a href="{{ path('contact') }}">Contactos</a></li>
+                                <li {% if app.request.attributes.get('_route') == 'circle' %}class="active"{% endif %}><a href="{{ path('circle') }}">Círculos</a></li>
                             </ul>
                             <p class="navbar-text pull-right">Logged in as <a href="#">Rico Pibe</a></p>
                         </div><!--/.nav-collapse -->
